@@ -1,0 +1,50 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzón de Comentarios y Mensajes</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
+    h2 { margin-top: 0; color: #1a73e8; text-align: center; }
+    p { color: #5f6368; text-align: center; font-size: 14px; margin-bottom: 25px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; color: #3c4043; font-size: 14px; }
+    input, textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 8px; font-size: 14px; outline: none; }
+    input:focus, textarea:focus { border-color: #1a73e8; }
+    button { width: 100%; padding: 12px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #1557b0; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Buzón de Opinión e Información</h2>
+    <p>Déjame tu nombre, un comentario o cualquier información y me llegará directo al correo.</p>
+
+    <!-- ETAPA 3: Vinculación con Formspree -->
+    <form action="https://formspree.io/f/mzedydya" method="POST">
+      
+      <div class="form-group">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Alexander" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Tu correo electrónico:</label>
+        <input type="email" id="email" name="_replyto" placeholder="nombre@correo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="comentario">Comentario o mensaje:</label>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe aquí tu opinión o mensaje..." required></textarea>
+      </div>
+
+      <button type="submit">Enviar comentario 📩</button>
+
+    </form>
+  </div>
+
+</body>
+</html>
