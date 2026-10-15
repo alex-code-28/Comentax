@@ -2,43 +2,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buzón de Comentarios y Mensajes</title>
+  <title>Buzón de Comentarios - Modern Dark</title>
   <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: #111827;
+      --border-color: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --input-bg: #030712;
+    }
+
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
-    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
-    h2 { margin-top: 0; color: #1a73e8; text-align: center; }
-    p { color: #5f6368; text-align: center; font-size: 14px; margin-bottom: 25px; }
-    .form-group { margin-bottom: 18px; }
-    label { display: block; margin-bottom: 6px; font-weight: 600; color: #3c4043; font-size: 14px; }
-    input, textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 8px; font-size: 14px; outline: none; }
-    input:focus, textarea:focus { border-color: #1a73e8; }
-    button { width: 100%; padding: 12px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-    button:hover { background: #1557b0; }
+    
+    body { 
+      background-color: var(--bg-color); 
+      color: var(--text-main);
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 20px; 
+    }
+
+    .card { 
+      background-color: var(--card-bg); 
+      border: 1px solid var(--border-color);
+      padding: 35px; 
+      border-radius: 16px; 
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+      width: 100%; 
+      max-width: 450px; 
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.15);
+    }
+
+    h2 { 
+      margin-top: 0; 
+      color: var(--text-main); 
+      text-align: center; 
+      font-size: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    p { 
+      color: var(--text-muted); 
+      text-align: center; 
+      font-size: 14px; 
+      margin-bottom: 25px; 
+      line-height: 1.5;
+    }
+
+    .form-group { 
+      margin-bottom: 20px; 
+    }
+
+    label { 
+      display: block; 
+      margin-bottom: 8px; 
+      font-weight: 500; 
+      color: var(--text-muted); 
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, textarea { 
+      width: 100%; 
+      padding: 12px 16px; 
+      border: 1px solid var(--border-color); 
+      border-radius: 8px; 
+      font-size: 14px; 
+      background-color: var(--input-bg);
+      color: var(--text-main);
+      outline: none; 
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, textarea:focus { 
+      border-color: var(--accent-color); 
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    button { 
+      width: 100%; 
+      padding: 14px; 
+      background-color: var(--accent-color); 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: background-color 0.2s, transform 0.1s; 
+    }
+
+    button:hover { 
+      background-color: var(--accent-hover); 
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h2>Buzón de Opinión e Información</h2>
-    <p>Déjame tu nombre, un comentario o cualquier información y me llegará directo al correo.</p>
+    <h2>Buzón de Opinión</h2>
+    <p>Diseño con modo oscuro aplicado. Déjame tu mensaje y lo recibiré al instante.</p>
 
-    <!-- ETAPA 3: Vinculación con Formspree -->
+    <!-- Vinculación con Formspree -->
     <form action="https://formspree.io/f/mzedydya" method="POST">
       
       <div class="form-group">
         <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej. Alexander" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Alexander" required autocomplete="off">
       </div>
 
       <div class="form-group">
         <label for="email">Tu correo electrónico:</label>
-        <input type="email" id="email" name="_replyto" placeholder="nombre@correo.com" required>
+        <input type="email" id="email" name="_replyto" placeholder="nombre@correo.com" required autocomplete="off">
       </div>
 
       <div class="form-group">
         <label for="comentario">Comentario o mensaje:</label>
-        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe aquí tu opinión o mensaje..." required></textarea>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe aquí tu opinión..." required></textarea>
       </div>
 
       <button type="submit">Enviar comentario 📩</button>
